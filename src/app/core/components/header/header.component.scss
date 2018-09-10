@@ -1,0 +1,45 @@
+@import "variables/color";
+@import "base/mixins";
+
+:host(app-header) {
+  padding-top: 0;
+  padding-bottom: 4rem;
+  display: grid;
+
+  header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: calculateRem(8px) calculateRem(16px);
+      color: $secondary--color;
+      height: 4rem;
+      background: $primary--color;
+
+      .progress-bar {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        height: calculateRem(5px);
+      }
+      .app-name {
+        font-size: 1.2rem;
+      }
+
+      img {
+        vertical-align: middle;
+      }
+    }
+  }
+}

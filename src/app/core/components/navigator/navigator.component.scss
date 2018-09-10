@@ -1,0 +1,60 @@
+@import "variables/color";
+
+.nav-container {
+    width: 250px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-main-item-container--selected {
+    border-left: 5px solid $sidebar-border-color--selected;
+}
+
+.nav-sub-item-container--related {
+    background-color: $sidebar-background-color--related;
+}
+
+.nav-item-container--selected-sub-item {
+    border-left: 5px solid $sidebar-border-color--selected;
+    background-color: $sidebar-background-color--selected;
+    -webkit-transition: 0.2s; /* Safari */
+    transition: 0.2s;
+}
+
+.nav-content {
+    width: 250px;
+    list-style: none;
+    padding: 15px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $sidebar-background-color--hover;
+        color: white;
+        -webkit-transition: 0.2s; /* Safari */
+        transition: 0.2s;
+    }
+}
+
+.nav-main-item--selected {
+    border-left: 5px solid $sidebar-border-color--selected;
+    background-color: $sidebar-background-color--selected;
+}
+
+
+.nav-sub-item--selected {
+    background-color: $sidebar-background-color--selected-sub-item;
+    color: black;
+}
+
+.nav-sub-items {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s;
+}
+
+.nav-sub-item {
+    padding: 5px 5px 5px 45px;
+}

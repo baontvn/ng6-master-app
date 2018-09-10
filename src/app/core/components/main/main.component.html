@@ -1,0 +1,15 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" [opened]="isOpeningSideBar">
+    <app-navigator></app-navigator>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="main page-container">
+      <router-outlet *ngIf="isOnline;else isOffline"></router-outlet>
+    </div>
+    <ng-template #isOffline>
+      <div>
+        <p class="offline-error">{{'offlineMessage' | translate}}&nbsp;&nbsp;&nbsp;<span>:&nbsp;)</span></p>
+      </div>
+    </ng-template>
+  </mat-sidenav-content>
+</mat-sidenav-container>

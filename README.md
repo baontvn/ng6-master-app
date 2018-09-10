@@ -1,1 +1,1 @@
-# ng6-master-app
+Angular 6 Master App

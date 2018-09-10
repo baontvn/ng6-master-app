@@ -1,0 +1,22 @@
+@import "variables/color";
+
+.mat-drawer {
+    background-color: $sidebar-background-color;
+    color: white;
+}
+
+.mat-menu-panel {
+    margin-top: 3.25rem;
+}
+
+.mat-menu-content {
+    padding: 0 !important;
+}
+
+.mat-menu-item {
+    padding-bottom: 2.5rem !important;
+    height: 35px !important;
+    outline: none !important;
+    border-top: 0.5px solid black !important;
+    margin-top: -1px;
+}

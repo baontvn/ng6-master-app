@@ -1,0 +1,47 @@
+$main-color: #0068b7;
+
+$header-font-color: #2c404c;
+$header-background-color: #d8e0e5;
+
+$sidebar-background-color: #011627;
+$sidebar-background-color--selected: #1D84B5;
+$sidebar-background-color--hover: #176087;
+$sidebar-background-color--related: darken(#1D84B5, 5%);
+$sidebar-background-color--selected-sub-item: #EAEAEA;
+
+$sidebar-border-color--selected: #F3EFF5;
+
+$navbar-background-color: $main-color;
+
+$breadcrumb-hover-color: #d8d8d8;
+$breadcrumb-selected-color: rgba(248, 231, 28, 0.8);
+
+$button-grey-color: #f2f2f2; //TODO: check again this color
+$button-grey-font-color: #4a4a4a;
+
+$button-red-color: #e13148;
+
+$button-blue-color: #3170e1;
+$button-blue-font-color: #ffffff;
+
+$button-dark-blue-color: #364c59;
+$button-dark-blue-font-color: #ffffff;
+
+$button-white-color: #efeff4;
+$button-white-font-color: #425866;
+
+$header-font-color: #2c404c;
+$header-background-color: #d8e0e5;
+
+$border-color: #2c404c;
+
+// Descriptive Colors
+$white: #ffffff;
+$blue: black;
+$red: #dc143c;
+$grey: #bbbbbb;
+$light-grey: #eeeeee;
+
+// Functional Colors
+$primary--color: $blue;
+$secondary--color: $white;

@@ -1,0 +1,59 @@
+// FPT: FSF-scss Core
+// File: Define Core style
+
+.full {
+    width: 100%;
+    height: 100%;
+}
+
+.layout-parent {
+    position: relative;
+    @extend .full;
+}
+
+.undisplayed {
+    display: none !important;
+}
+
+.enable-scroll-on-device {
+    -webkit-overflow-scrolling: touch;
+}
+
+.disabled {
+    opacity: .2;
+    pointer-events: none;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.shadow-navigation {
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.dark-breadcrumbs {
+    background: grey;
+}
+
+.no-selectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+
+.box--center {
+    margin: 0 auto;
+}
+
+.error-message {
+    color: red;
+}

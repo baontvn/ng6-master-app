@@ -1,0 +1,24 @@
+<div class="nav-container">
+  <ul class="nav-list">
+    <li *ngFor="let item of menuItems">
+      <div class="nav-item-container" [class.nav-item-container--selected-sub-item]="isSelectedSubItem(item)">
+        <div class="nav-content nav-main-item" [class.nav-main-item--selected]="isSelectedItem(item)" (click)="toggleMenuItem(item)">
+          <fa-icon *ngIf="item.icon" [icon]="item.icon"></fa-icon>
+          <span class="ml-2">
+            {{item.name}}
+          </span>
+          <fa-icon class="float-right" *ngIf="item.children && item.children.length > 0" [icon]="faChevronDown"></fa-icon>
+        </div>
+        <ul id="nav-sub-items-{{item.id}}" class="nav-sub-items" [class.subMenu--active]="item.isShow"
+          *ngIf="item.children && item.children.length > 0">
+          <li *ngFor="let subItem of item.children">
+            <div class="nav-content nav-sub-item" [class.nav-sub-item-container--related]="isSelectedSubItem(item)"
+              [class.nav-sub-item--selected]="isSelectedItem(subItem)" (click)="navigateTo(subItem)">
+              {{subItem.name}}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

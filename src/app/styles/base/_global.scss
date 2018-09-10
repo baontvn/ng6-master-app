@@ -1,0 +1,39 @@
+// FPT: FSF-scss Core
+// File: Define base style
+
+@import './core';
+
+html, body, app-root {
+    @extend .full;
+    // overflow: hidden;
+    // position: absolute;
+  }
+  
+  // @font-face {
+  // font-family: 'GEInspiraSans';
+  // src: url('./assets/fonts/GEInspiraSans/GEInspiraSans.ttf')  format('truetype');
+  // }
+  
+  // *{
+  //   font-family: 'GEInspiraSans', sans-serif;
+  // }
+  
+  /* ==============================================================
+  Bootstrap tweaks
+  ===============================================================*/
+  
+  body, h1, h2, h3, h4 {
+    font-weight: 300;
+  }
+  
+  // body {
+  //   font-family: 'GEInspiraSans', sans-serif;
+  // }
+
+  .clickable {
+    cursor: pointer;
+  }
+
+  button {
+    outline: none !important;
+  }
