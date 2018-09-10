@@ -1,60 +1,91 @@
 @import "variables/color";
 
-.nav-container {
-    width: 250px;
-}
-
-ul {
-    list-style: none;
+ul, li {
+    margin: 0;
     padding: 0;
 }
-
-.nav-main-item-container--selected {
-    border-left: 5px solid $sidebar-border-color--selected;
+ul {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+}
+li {
+    float: left;
+    position: relative;
+    width:auto;
 }
 
-.nav-sub-item-container--related {
-    background-color: $sidebar-background-color--related;
+li:hover {
+    background: $sidebar-background-color--hover;
 }
 
-.nav-item-container--selected-sub-item {
-    border-left: 5px solid $sidebar-border-color--selected;
-    background-color: $sidebar-background-color--selected;
-    -webkit-transition: 0.2s; /* Safari */
-    transition: 0.2s;
+.menu-main {
+    width: 100px;
+    text-align: center;
+}
+
+.submenu {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 50px;
+    visibility: hidden;
+    z-index: 1;
+    background: $sidebar-background-color--related;
+}
+li:hover ul.submenu {
+    opacity: 1;
+    top: 50px;
+    transition: 0.5s;
+    visibility: visible;
+}
+.submenu li {
+    float: none;
+    width: 100%;
 }
 
 .nav-content {
-    width: 250px;
-    list-style: none;
-    padding: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-sub-item {
+    background-color: $sidebar-background-color;
+    min-width: 120px;
+    max-width: 250px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    padding-left: 10px;
 
     &:hover {
-        cursor: pointer;
         background-color: $sidebar-background-color--hover;
-        color: white;
-        -webkit-transition: 0.2s; /* Safari */
-        transition: 0.2s;
+    }
+}
+
+.nav-sub-item--selected {
+    background-color: $sidebar-background-color--selected-sub-item;
+}
+
+.nav-sub-item--selected {
+    background-color: $sidebar-background-color--selected;
+}
+
+.nav-main-item {
+    width: 100px;
+    text-align: center;
+
+    &:hover {
+        background-color: $sidebar-background-color--hover;
     }
 }
 
 .nav-main-item--selected {
-    border-left: 5px solid $sidebar-border-color--selected;
     background-color: $sidebar-background-color--selected;
+    font-weight: bold;
 }
 
-
-.nav-sub-item--selected {
-    background-color: $sidebar-background-color--selected-sub-item;
-    color: black;
-}
-
-.nav-sub-items {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s;
-}
-
-.nav-sub-item {
-    padding: 5px 5px 5px 45px;
+.nav-item--selected-sub-item {
+    text-decoration: underline;
+    font-weight: bold;
 }

@@ -1,10 +1,9 @@
-import {Component, Inject, OnInit, Output, EventEmitter} from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
-import {APP_CONFIG, AppConfig} from '../../../config/app.config';
-import {IAppConfig} from '../../../config/iapp.config';
-import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
-import {ProgressBarService} from '../../services/progress-bar.service';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Component, Inject, OnInit, Output, EventEmitter } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { APP_CONFIG, AppConfig } from '../../../config/app.config';
+import { IAppConfig } from '../../../config/iapp.config';
+import { _ } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,27 +15,28 @@ export class HeaderComponent implements OnInit {
 
   appConfig: any;
   menuItems: any[];
-  progressBarMode: string;
   currentLang: string;
-
-  navTriggerIcon = faBars;
 
   appName = AppConfig.name;
 
+  isCollapsed: Boolean = false;
+
   @Output() action = new EventEmitter();
 
-  constructor(@Inject(APP_CONFIG) appConfig: IAppConfig,
-              private progressBarService: ProgressBarService,
-              private translateService: TranslateService) {
+  constructor(
+    @Inject(APP_CONFIG) appConfig: IAppConfig,
+    private router: Router,
+    private translateService: TranslateService
+    ) {
     this.appConfig = appConfig;
   }
 
   ngOnInit() {
     this.currentLang = this.translateService.currentLang;
     this.loadMenus();
-    this.progressBarService.updateProgressBar$.subscribe((mode: string) => {
-      this.progressBarMode = mode;
-    });
+    // this.progressBarService.updateProgressBar$.subscribe((mode: string) => {
+    //   this.progressBarMode = mode;
+    // });
   }
 
   changeLanguage(language: string): void {
@@ -45,17 +45,14 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  toggleSideBar() {
-    this.action.emit({
-      type: 'toggleSideBar',
-      data: true
-    });
+  gotoHomePage() {
+    this.router.navigate(['/']);
   }
 
   private loadMenus(): void {
     this.menuItems = [
-      {link: '/', name: _('home')},
-      {link: '/' + AppConfig.routes.heroes, name: _('heroesList')}
+      { link: '/', name: _('home') },
+      { link: '/' + AppConfig.routes.heroes, name: _('heroesList') }
     ];
   }
 }

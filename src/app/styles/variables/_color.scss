@@ -1,15 +1,16 @@
 $main-color: #0068b7;
 
-$header-font-color: #2c404c;
-$header-background-color: #d8e0e5;
+$header-font-color: white;
+$header-background-color: #011627;
 
 $sidebar-background-color: #011627;
-$sidebar-background-color--selected: #1D84B5;
-$sidebar-background-color--hover: #176087;
+$sidebar-background-color--selected: lighten(#011627, 12%);
+$sidebar-background-color--hover: lighten(#011627, 10%);
 $sidebar-background-color--related: darken(#1D84B5, 5%);
-$sidebar-background-color--selected-sub-item: #EAEAEA;
+$sidebar-background-color--selected-sub-item: $sidebar-background-color--selected;
 
 $sidebar-border-color--selected: #F3EFF5;
+$sidebar-border-color--hover: #F3EFF5;
 
 $navbar-background-color: $main-color;
 
@@ -29,9 +30,6 @@ $button-dark-blue-font-color: #ffffff;
 
 $button-white-color: #efeff4;
 $button-white-font-color: #425866;
-
-$header-font-color: #2c404c;
-$header-background-color: #d8e0e5;
 
 $border-color: #2c404c;
 

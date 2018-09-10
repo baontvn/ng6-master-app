@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SideBarItem } from '../../models/layout.model';
-import { faIndustry, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
 @Component({
@@ -11,8 +10,6 @@ import { filter } from 'rxjs/operators';
 export class NavigatorComponent implements OnInit {
 
   menuItems: SideBarItem[] = [];
-
-  faChevronDown = faChevronDown;
 
   currentRoute: String = '';
 
@@ -29,7 +26,7 @@ export class NavigatorComponent implements OnInit {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
-      this.currentRoute = event.url;
+      this.currentRoute = event.urlAfterRedirects;
     });
   }
 
@@ -66,17 +63,8 @@ export class NavigatorComponent implements OnInit {
   }
 
   toggleMenuItem(menuItem) {
-    const target = document.getElementById(`nav-sub-items-${menuItem.id}`);
-    if (!target) {
-      if (menuItem.children || menuItem.children.length === 0) {
-        this.router.navigate([menuItem.route]);
-      }
-    } else {
-      if (target.style.maxHeight) {
-        target.style.maxHeight = null;
-      } else {
-        target.style.maxHeight = target.scrollHeight + 'px';
-      }
+    if (!menuItem.children || (menuItem.children && menuItem.children.length === 0)) {
+      this.router.navigate([menuItem.route]);
     }
   }
 

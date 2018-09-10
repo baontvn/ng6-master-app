@@ -1,5 +1,7 @@
-<app-header #appHeader (action)="handleHeaderAction($event)"></app-header>
-<app-main #appMain>
-
-</app-main>
-<app-footer></app-footer>
+<nz-layout>
+  <nz-layout>
+    <app-header #appHeader (action)="handleHeaderAction($event)"></app-header>
+    <app-main></app-main>
+    <!-- <app-footer></app-footer> -->
+  </nz-layout>
+</nz-layout>

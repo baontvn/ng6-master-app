@@ -6,12 +6,12 @@ import { MainComponent } from '../../components/main/main.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss']
 })
 
 export class HomePage implements OnInit {
 
   @ViewChild('appHeader') appHeader: HeaderComponent;
-  @ViewChild('appMain') appMain: MainComponent;
 
   constructor() {
 
@@ -22,6 +22,6 @@ export class HomePage implements OnInit {
   }
 
   handleHeaderAction(event) {
-    this.appMain.toggleSideBar();
+    console.log(event);
   }
 }
