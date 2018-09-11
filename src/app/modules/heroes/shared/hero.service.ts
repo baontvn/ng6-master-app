@@ -4,7 +4,6 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AppConfig} from '../../../config/app.config';
 import {Hero} from './hero.model';
 import {catchError, tap} from 'rxjs/operators';
-import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
 import {TranslateService} from '@ngx-translate/core';
 import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import {LoggerService} from '../../../core/services/logger.service';
@@ -22,8 +21,7 @@ export class HeroService {
   }
 
   constructor(private http: HttpClient,
-              private translateService: TranslateService,
-              private snackBar: MatSnackBar) {
+              private translateService: TranslateService) {
     this.heroesUrl = AppConfig.endpoints.heroes;
   }
 
@@ -105,9 +103,6 @@ export class HeroService {
   showSnackBar(name): void {
     this.translateService.get([String(_('heroCreated')), String(_('saved')),
       String(_('heroLikeMaximum')), String(_('heroRemoved'))], {'value': AppConfig.votesLimit}).subscribe((texts) => {
-      const config: any = new MatSnackBarConfig();
-      config.duration = AppConfig.snackBarDuration;
-      this.snackBar.open(texts[name], 'OK', config);
     });
   }
 }

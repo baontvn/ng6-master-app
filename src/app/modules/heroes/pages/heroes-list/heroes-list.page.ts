@@ -2,7 +2,6 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {Hero} from '../../shared/hero.model';
 import {HeroService} from '../../shared/hero.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatDialog} from '@angular/material';
 import {Router} from '@angular/router';
 import {LoggerService} from '../../../../core/services/logger.service';
 import {AppConfig} from '../../../../config/app.config';
@@ -23,7 +22,6 @@ export class HeroesListPage implements OnInit {
   @ViewChild('form') myNgForm; // just to call resetForm method
 
   constructor(private heroService: HeroService,
-              private dialog: MatDialog,
               private router: Router,
               private formBuilder: FormBuilder) {
     this.canVote = HeroService.checkIfUserCanVote();
@@ -68,18 +66,5 @@ export class HeroesListPage implements OnInit {
   }
 
   remove(heroToRemove: Hero): void {
-    const dialogRef = this.dialog.open(HeroRemoveComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.heroService.deleteHeroById(heroToRemove.id).subscribe(() => {
-          this.heroService.showSnackBar('heroRemoved');
-          this.heroes = this.heroes.filter(hero => hero.id !== heroToRemove.id);
-        }, (response: Response) => {
-          if (response.status === 500) {
-            this.error = 'heroDefault';
-          }
-        });
-      }
-    });
   }
 }

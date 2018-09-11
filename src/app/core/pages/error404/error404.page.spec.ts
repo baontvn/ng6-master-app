@@ -2,7 +2,6 @@ import {async, TestBed} from '@angular/core/testing';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {TranslateModule} from '@ngx-translate/core';
 import {APP_CONFIG, AppConfig} from '../../../config/app.config';
-import {MaterialModule} from '../../../shared/modules/material.module';
 import {TestsModule} from '../../../shared/modules/tests.module';
 import {Error404Page} from './error404.page';
 import {HeroService} from '../../../modules/heroes/shared/hero.service';
@@ -17,8 +16,7 @@ describe('Error404Page', () => {
     TestBed.configureTestingModule({
       imports: [
         TestsModule,
-        TranslateModule.forRoot(),
-        MaterialModule
+        TranslateModule.forRoot()
       ],
       declarations: [
         Error404Page
