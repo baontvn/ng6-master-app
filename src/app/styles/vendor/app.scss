@@ -1,10 +1,20 @@
+@import "variables/color";
 
-.ant-layout-header {
-  height: 50px !important;
-  line-height: 50px !important;
-  padding: 0 15px !important;
+// SETTINGS FOR EVENT - FULL CALENDAR
+.task-priority-high {
+    background: $event-priotiry-high-color;
+    color: white !important;
+    border: none;
 }
 
-.ant-divider-horizontal {
-  margin: 0 !important;
+.task-priority-normal {
+  background: $event-priotiry-normal-color;
+  color: white !important;
+  border: none;
+}
+
+.task-priority-low {
+  background: $event-priotiry-low-color;
+  color: white !important;
+  border: none;
 }

@@ -3,7 +3,7 @@
   "version": "6.1.0",
   "license": "MIT",
   "scripts": {
-    "start": "ng serve --open",
+    "start": "ng serve",
     "build": "ng build",
     "deploy": "ng build --prod",
     "test": "ng test",

@@ -14,4 +14,11 @@
   .app-name {
     cursor: pointer;
   }
+
+
+  .ant-layout-header {
+    height: 50px !important;
+    line-height: 50px !important;
+    padding: 0 15px !important;
+  }
 }
