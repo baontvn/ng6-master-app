@@ -18,7 +18,6 @@ import { LocalStorageService } from './services/local-storage.service';
 import { MainComponent } from './components/main/main.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { NavigatorComponent } from './components/navigator/navigator.component';
-
 @NgModule({
   imports: [
     ReactiveFormsModule,

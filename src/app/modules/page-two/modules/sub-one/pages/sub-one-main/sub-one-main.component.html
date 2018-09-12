@@ -1,3 +1,11 @@
 <p>
   sub-one-main works!
 </p>
+<div style="position: relative">
+  <!-- <app-treeview-chart classContainer="operator1" color="#f5a623" [data]="mockData"></app-treeview-chart> -->
+  <div class="treeview-content"></div>
+</div>
+
+<div class="tree-view-sample">
+  <app-treeview-chart [chartContainer]="'tree-view-sample'" [data]="chartData" (action)="handleChartAction($event)"></app-treeview-chart>
+</div>

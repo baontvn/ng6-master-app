@@ -13,7 +13,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ProgressBarService } from './core/services/progress-bar.service';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HomePage } from './core/pages/home/home.page';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
