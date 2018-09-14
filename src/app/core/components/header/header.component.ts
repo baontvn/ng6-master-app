@@ -4,7 +4,10 @@ import { APP_CONFIG, AppConfig } from '../../../config/app.config';
 import { IAppConfig } from '../../../config/iapp.config';
 import { _ } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { Router } from '@angular/router';
+import {ProgressBarService} from '../../services/progress-bar.service';
+import { User } from '../../models/user.model';
 
+const LOG_OUT_FEATURE = 'logout';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -14,34 +17,34 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   appConfig: any;
-  menuItems: any[];
   currentLang: string;
 
   appName = AppConfig.name;
+  currentUser: User;
 
-  isCollapsed: Boolean = false;
+  progressBarMode: string;
 
   @Output() action = new EventEmitter();
 
   constructor(
     @Inject(APP_CONFIG) appConfig: IAppConfig,
     private router: Router,
-    private translateService: TranslateService
+    private translate: TranslateService,
+    private progressBarService: ProgressBarService
     ) {
     this.appConfig = appConfig;
+
+    this.currentUser = {
+      id: 1,
+      name: 'Mock User',
+      email: 'mock.user@gmail.com'
+    };
   }
 
   ngOnInit() {
-    this.currentLang = this.translateService.currentLang;
-    this.loadMenus();
-    // this.progressBarService.updateProgressBar$.subscribe((mode: string) => {
-    //   this.progressBarMode = mode;
-    // });
-  }
-
-  changeLanguage(language: string): void {
-    this.translateService.use(language).subscribe(() => {
-      this.loadMenus();
+    this.currentLang = this.translate.currentLang;
+    this.progressBarService.updateProgressBar$.subscribe((mode: string) => {
+      this.progressBarMode = mode;
     });
   }
 
@@ -49,10 +52,14 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  private loadMenus(): void {
-    this.menuItems = [
-      { link: '/', name: _('home') },
-      { link: '/' + AppConfig.routes.heroes, name: _('heroesList') }
-    ];
+  handleUserSetting(userSetting) {
+    if (userSetting.feature === LOG_OUT_FEATURE) {
+      console.log('Logout');
+    }
+
+    if (userSetting.route !== '') {
+      console.log('Navigate to user setting page');
+      // this.router.navigate([userSetting.route]);
+    }
   }
 }

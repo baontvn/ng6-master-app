@@ -1,0 +1,42 @@
+@import "variables/color";
+
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    background: $login-page-background-color;
+    .content {
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .app-name {
+            margin-top: 0px;
+            padding-bottom: 10px;
+            font-size: 32px;
+        }
+        .login-form {
+            display: block !important;
+            padding: 40px;
+            background: #fff;
+            width: 500px;
+            box-shadow: 0 0 10px #ddd;
+            input:-webkit-autofill {
+                -webkit-box-shadow: 0 0 0 30px white inset;
+            }
+        }
+    }
+
+    .login-button {
+        background: $login-page-background-color;
+        color: white;
+    }
+}
+.text-center {
+    text-align: center;
+}
+.w-100 {
+    width: 100%;
+}

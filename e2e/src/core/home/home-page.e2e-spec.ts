@@ -7,9 +7,4 @@ describe('Home page', function () {
   beforeEach(() => {
     page = new HomePage();
   });
-
-  it('should contains heroes limit', () => {
-    HomePage.navigateTo();
-    expect<any>(HomePage.getNumberHeroes()).toBe(AppConfig.topHeroesLimit);
-  });
 });

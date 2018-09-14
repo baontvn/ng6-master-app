@@ -14,4 +14,16 @@
   .app-name {
     cursor: pointer;
   }
+
+  .progress-bar {	
+    display: flex;	
+    align-content: center;	
+    align-items: center;	
+    height: calculateRem(2px);	
+  }
+
+  .user-btn {
+    background: transparent;
+    border: none;
+  }
 }

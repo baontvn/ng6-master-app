@@ -1,24 +1,22 @@
+<mat-progress-bar [color]="'primary'" [mode]="progressBarMode">
+</mat-progress-bar>
 <nz-header>
-    <div class="content" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxFlexFill>
 
+    <div class="content" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxFlexFill>
         <div fxFlex="70" fxLayout="row" fxLayoutAlign="start center" class="sec1">
             <i class="anticon sidebar-trigger anticon-menu-fold"></i>
             <span class="mx-4 app-name" (click)="gotoHomePage()">{{appName}}</span>
             <app-navigator></app-navigator>
         </div>
-        <div fxFlex="30" class="sec2">
-            <nz-dropdown class="float-right" nzPlacement="bottomRight">
-                <div class="alain-default__nav-item d-flex align-items-center px-sm" nz-dropdown>
-                    Mock User
-                </div>
-                <div nz-menu class="width-sm">
-                    <div nz-menu-item>
-                        <i class="anticon anticon-user mr-sm"></i>Settings</div>
-                    <li nz-menu-divider></li>
-                    <div nz-menu-item>
-                        <i class="anticon anticon-setting mr-sm"></i>Logout</div>
-                </div>
-            </nz-dropdown>
+        <div fxFlex="30" class="text-right">
+            <button class="user-btn" [matMenuTriggerFor]="matmenu">
+                {{currentUser?.name}}
+            </button>
+            <mat-menu #matmenu="matMenu" [overlapTrigger]="false">
+                <button mat-menu-item *ngFor="let setting of appConfig.userSetting" (click)="handleUserSetting(setting)">
+                    {{setting.feature | translate}}
+                </button>
+            </mat-menu>
         </div>
     </div>
 </nz-header>

@@ -1,11 +1,11 @@
-$main-color: #0068b7;
+$main-color: #011627;
 
 $header-font-color: white;
-$header-background-color: #011627;
+$header-background-color: $main-color;
 
-$sidebar-background-color: #011627;
-$sidebar-background-color--selected: lighten(#011627, 12%);
-$sidebar-background-color--hover: lighten(#011627, 10%);
+$sidebar-background-color: $main-color;
+$sidebar-background-color--selected: lighten($main-color, 12%);
+$sidebar-background-color--hover: lighten($main-color, 10%);
 $sidebar-background-color--related: darken(#1D84B5, 5%);
 $sidebar-background-color--selected-sub-item: $sidebar-background-color--selected;
 
@@ -14,22 +14,7 @@ $sidebar-border-color--hover: #F3EFF5;
 
 $navbar-background-color: $main-color;
 
-$breadcrumb-hover-color: #d8d8d8;
-$breadcrumb-selected-color: rgba(248, 231, 28, 0.8);
-
-$button-grey-color: #f2f2f2; //TODO: check again this color
-$button-grey-font-color: #4a4a4a;
-
-$button-red-color: #e13148;
-
-$button-blue-color: #3170e1;
-$button-blue-font-color: #ffffff;
-
-$button-dark-blue-color: #364c59;
-$button-dark-blue-font-color: #ffffff;
-
-$button-white-color: #efeff4;
-$button-white-font-color: #425866;
+$login-page-background-color: $main-color;
 
 $border-color: #2c404c;
 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SideBarItem } from '../../models/layout.model';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+
 @Component({
   selector: 'app-navigator',
   templateUrl: './navigator.component.html',
@@ -34,26 +36,26 @@ export class NavigatorComponent implements OnInit {
     this.menuItems = [
       {
         id: 2,
-        name: 'Page One',
+        name: 'nav.page-one.main',
         route: '/page-one',
         parentId: null,
         children: []
       },
       {
         id: 3,
-        name: 'Page Two',
+        name: 'nav.page-two.main',
         route: '/page-two',
         parentId: null,
         children: [
           {
             id: 30,
-            name: 'Sample Sub Item 1',
+            name: 'nav.page-two.sub-one',
             route: '/sub-one',
             parentId: 3,
           },
           {
             id: 31,
-            name: 'Sample Sub Item 2',
+            name: 'nav.page-two.sub-two',
             route: '/sub-two',
             parentId: 3,
           }

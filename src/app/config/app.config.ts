@@ -7,16 +7,22 @@ export let APP_CONFIG = new InjectionToken('app.config');
 export const AppConfig: IAppConfig = {
   name: 'Master UI App',
   routes: {
-    heroes: 'heroes',
     error404: '404',
     page1: 'page-one',
     page2: 'page-two',
+    login: 'login'
   },
   endpoints: {
-    heroes: 'https://nodejs-example-app.herokuapp.com/heroes'
+
   },
-  votesLimit: 3,
-  topHeroesLimit: 4,
-  snackBarDuration: 3000,
-  repositoryURL: 'https://github.com/Ismaestro/angular5-example-app'
+  userSetting: [
+    {
+      feature: 'setting',
+      route: 'user-setting/setting'
+    },
+    {
+      feature: 'logout',
+      route: ''
+    }
+  ]
 };

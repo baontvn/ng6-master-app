@@ -8,7 +8,7 @@ declare const Modernizr;
 
 @Component({
   selector: 'app-root',
-  template: '<app-home></app-home>'
+  template: '<router-outlet></router-outlet>'
 })
 
 export class AppComponent implements OnInit {

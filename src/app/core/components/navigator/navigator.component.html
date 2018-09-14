@@ -2,14 +2,14 @@
   <li *ngFor="let item of menuItems">
     <div class="nav-content nav-main-item" [class.nav-main-item--selected]="isSelectedItem(item)" [class.nav-item--selected-sub-item]="isSelectedSubItem(item)" (click)="toggleMenuItem(item)">
         <span class="ml-2">
-          {{item.name}}
+          {{item.name | translate}}
         </span>
       </div>
     <ul class="submenu" *ngIf="item.children && item.children.length > 0">
       <li *ngFor="let subItem of item.children">
         <div class="nav-content nav-sub-item" [class.nav-sub-item-container--related]="isSelectedSubItem(item)"
           [class.nav-sub-item--selected]="isSelectedItem(subItem)" (click)="navigateTo(subItem)">
-          {{subItem.name}}
+          {{subItem.name | translate}}
         </div>
       </li>
     </ul>

@@ -48,7 +48,7 @@ export class I18nService {
              * We use eventManager to publish again to synchronize publish/subcribe mechanism of eventManager in all application
              */
             this.eventManager.broadcast({
-                name: EventEnum.LANGUALE_CHANGED,
+                name: EventEnum.LANGUAGE_CHANGED,
                 data: {
                     language: event && event.lang
                 }

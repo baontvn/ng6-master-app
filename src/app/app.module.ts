@@ -13,7 +13,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ProgressBarService } from './core/services/progress-bar.service';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HomePage } from './core/pages/home/home.page';
+import { AuthorizeModule } from './core/guards/authorize/authorize.module';
+import { AuthGuard } from './core/guards/authorize/role-guards/auth.guard';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -33,7 +34,9 @@ export function createTranslateLoader(http: HttpClient) {
       }
     }),
     CoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthorizeModule
+
   ],
   declarations: [
     AppComponent
