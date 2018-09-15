@@ -3,7 +3,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
 import { _ } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { AppConfig } from './config/app.config';
-import { NzMessageService } from 'ng-zorro-antd';
 declare const Modernizr;
 
 @Component({
@@ -16,8 +15,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private translateService: TranslateService,
-    private title: Title,
-    private snackBar: NzMessageService) {
+    private title: Title
+  ) {
   }
 
   ngOnInit() {
@@ -39,7 +38,7 @@ export class AppComponent implements OnInit {
 
     if (!supported) {
       this.translateService.get([String(_('updateBrowser'))]).subscribe((texts) => {
-        this.snackBar.create('warning', texts['updateBrowser']);
+        // this.snackBar.create('warning', texts['updateBrowser']);
       });
     }
 

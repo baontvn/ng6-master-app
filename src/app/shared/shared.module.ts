@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
-import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { MaterialModule } from './modules/material.module';
 
 @NgModule({
@@ -10,17 +9,14 @@ import { MaterialModule } from './modules/material.module';
     CommonModule,
     FlexLayoutModule,
     TranslateModule,
-    MaterialModule,
-    NgZorroAntdModule
+    MaterialModule
   ],
   exports: [
     CommonModule,
     FlexLayoutModule,
     TranslateModule,
-    MaterialModule,
-    NgZorroAntdModule
-  ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }]
+    MaterialModule
+  ]
 })
 
 export class SharedModule {

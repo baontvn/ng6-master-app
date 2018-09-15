@@ -18,10 +18,12 @@ export const AppConfig: IAppConfig = {
   userSetting: [
     {
       feature: 'setting',
+      name: 'header.user-setting.setting',
       route: 'user-setting/setting'
     },
     {
       feature: 'logout',
+      name: 'header.user-setting.log-out',
       route: ''
     }
   ]

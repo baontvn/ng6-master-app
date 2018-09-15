@@ -1,35 +1,5 @@
 @import "variables/color";
 
 :host {
-  .ant-menu{
-    li {
-     margin: 0;
-    }
-  }
-
-  .ant-menu-submenu-selected {
-    border-left-color: $sidebar-border-color--selected;
-  }
-
-  .ant-menu-submenu-arrow:hover {
-    color: white;
-  }
-
-  .ant-menu > .ant-menu-item-selected {
-    border-left-color: $sidebar-border-color--selected;
-    -webkit-transition: 0.2s; /* Safari */
-    transition: 0.2s;
-  }
-
-  .ant-menu-item, .ant-menu-submenu-title {
-    border-left: 3px solid transparent;
-  }
-
-  .ant-menu-submenu {
-    border-left: 3px solid transparent;
-  }
-
-  .ant-menu-submenu-selected {
-    border-left-color: $sidebar-border-color--selected;
-  }
+  
 }

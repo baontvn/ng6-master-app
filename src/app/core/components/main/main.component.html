@@ -1,12 +1,10 @@
-<nz-content>
-  <div class="main page-container">
-    <router-outlet *ngIf="isOnline;else isOffline"></router-outlet>
+<div class="main page-container">
+  <router-outlet *ngIf="isOnline;else isOffline"></router-outlet>
+</div>
+<ng-template #isOffline>
+  <div>
+    <p class="offline-error">{{'offlineMessage' | translate}}&nbsp;&nbsp;&nbsp;
+      <span>:&nbsp;)</span>
+    </p>
   </div>
-  <ng-template #isOffline>
-    <div>
-      <p class="offline-error">{{'offlineMessage' | translate}}&nbsp;&nbsp;&nbsp;
-        <span>:&nbsp;)</span>
-      </p>
-    </div>
-  </ng-template>
-</nz-content>
+</ng-template>

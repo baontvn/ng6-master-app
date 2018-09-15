@@ -10,7 +10,6 @@ import { EventManager } from './services/event-manager';
 import { Spinner } from './services/spinner.service';
 import { I18nService } from './services/i18n.service';
 import { LocalStorageService } from './services/local-storage.service';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { MaterialModule } from '../shared/modules/material.module';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { MaterialModule } from '../shared/modules/material.module';
     ReactiveFormsModule,
     RouterModule,
     SharedModule,
-    NgZorroAntdModule,
     MaterialModule
   ],
   providers: [

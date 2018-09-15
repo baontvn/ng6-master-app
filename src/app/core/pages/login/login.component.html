@@ -1,36 +1,37 @@
 <div class="login-page">
-  <div class="content">
-      <form class="login-form">
-          <div class="text-center">
-              <h2 class="app-name">{{appName}}</h2>
-          </div>
-          <div fxFlex fxLayout="row" fxLayout.lt-md="column">
-              <div fxFlexFill>
-                  <mat-form-field class="w-100" floatLabel="always">
-                      <mat-label>User Name</mat-label>
-                      <input matInput>
-                  </mat-form-field>
-              </div>
-          </div>
-          <div fxFlex fxLayout="row" fxLayout.lt-md="column">
-              <div fxFlexFill>
-                  <mat-form-field class="w-100" floatLabel="always">
-                      <mat-label>Password</mat-label>
-                      <input matInput type="password">
-                  </mat-form-field>
-              </div>
-          </div>
-          <div fxFlex fxLayout="row" fxLayout.lt-md="column" style="margin: 20px 0 30px 0">
-              <div fxFlex fxLayoutAlign="end">
-                  <a class="primary-text" href="javascript:void(0)">{{'common.action.forgotPassword' | translate}}</a>
-              </div>
-          </div>
-          <div fxFlex fxLayout="row" fxLayout.lt-md="column">
-              <div fxFlexFill>
-                  <button mat-raised-button class="login-button w-100" (click)="onLogin()">Login</button>
-              </div>
-          </div>
-
-      </form>
-  </div>
+    <div class="content">
+        <form class="login-form" [formGroup]="loginFormGroup">
+            <div class="text-center">
+                <h2 class="app-name">{{appName}}</h2>
+            </div>
+            <div fxFlex fxLayout="row" fxLayout.lt-md="column">
+                <div fxFlexFill>
+                    <mat-form-field class="w-100" floatLabel="always">
+                        <mat-label>{{'login-page.label.user-name' | translate}}</mat-label>
+                        <input matInput formControlName="userName">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxFlex fxLayout="row" fxLayout.lt-md="column">
+                <div fxFlexFill>
+                    <mat-form-field class="w-100" floatLabel="always" color='primary'>
+                        <mat-label>{{'login-page.label.password' | translate}}</mat-label>
+                        <input matInput type="password" formControlName="password" [type]="hidePassword ? 'password' : 'text'">
+                        <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxFlex fxLayout="row" fxLayout.lt-md="column">
+                <div fxFlex fxLayoutAlign="end">
+                    <a class="primary-text text--small mt-1 mb-1" href="javascript:void(0)">{{'login-page.action.forgot-password' | translate}}</a>
+                </div>
+            </div>
+            <div fxFlex fxLayout="row" fxLayout.lt-md="column">
+                <div fxFlexFill>
+                    <button mat-raised-button type="button" class="login-button w-100" [disabled]="loginFormGroup.invalid"
+                        (click)="onLogin()">{{'login-page.action.login' | translate}}</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

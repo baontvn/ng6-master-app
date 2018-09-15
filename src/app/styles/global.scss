@@ -2,7 +2,6 @@
 // Vendor
 @import "vendor/bootstrap.scss";
 @import "vendor/material.scss";
-@import "vendor/ant-design";
 // Base
 @import "base/global";
 
@@ -10,6 +9,7 @@
 @import "plugins/plugins";
 
 // Theme
-@import "variables/theme";
 
 @import "vendor/app";
+
+// @import "variables/theme";

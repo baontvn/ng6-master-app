@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NzModalService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-page-one-main',
@@ -8,17 +7,8 @@ import { NzModalService } from 'ng-zorro-antd';
 })
 export class PageOneMainComponent implements OnInit {
 
-  constructor(private modalService: NzModalService) { }
+  constructor() { }
 
   ngOnInit() {
   }
-
-  showConfirm(): void {
-    this.modalService.confirm({
-      nzTitle  : '<i>Do you Want to delete these items?</i>',
-      nzContent: '<b>Some descriptions</b>',
-      nzOnOk   : () => console.log('OK')
-    });
-  }
-
 }

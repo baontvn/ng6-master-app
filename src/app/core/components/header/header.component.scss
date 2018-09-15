@@ -1,29 +1,75 @@
 @import "variables/color";
 @import "base/mixins";
-
 :host(app-header) {
-  nz-header {
-    background: $header-background-color;
-    color: $header-font-color;
-  
-    .sidebar-trigger {
-      color: $header-font-color;
+    padding-top: 0;
+    padding-bottom: 3rem;
+    display: grid;
+    header {
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        /* iOS Safari */
+        -webkit-touch-callout: none;
+        /* Safari */
+        -webkit-user-select: none;
+        /* Firefox */
+        -moz-user-select: none;
+        /* Internet Explorer/Edge */
+        -ms-user-select: none;
+        /* Non-prefixed version, currently	
+                                  supported by Chrome and Opera */
+        user-select: none;
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: calculateRem(8px) 0;
+            color: $secondary--color;
+            height: 3rem;
+            background: $header-background-color;
+            .progress-bar {
+                display: flex;
+                align-content: center;
+                align-items: center;
+                height: calculateRem(5px);
+            }
+            .app-name {
+                font-size: 1.2rem;
+            }
+            .home-icon {
+                margin-left: 1rem;
+            }
+            .header-icon {
+                margin-right: 1rem;
+                vertical-align: middle;
+            }
+        }
     }
-  }
+    .app-name {
+        cursor: pointer;
+    }
+    .progress-bar {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        height: calculateRem(2px);
+    }
+    .user-btn {
+        height: 3rem;
+        background: transparent;
+        border: none;
+        vertical-align: middle;
+        color: white;
+    }
+}
 
-  .app-name {
-    cursor: pointer;
-  }
-
-  .progress-bar {	
-    display: flex;	
-    align-content: center;	
-    align-items: center;	
-    height: calculateRem(2px);	
-  }
-
-  .user-btn {
-    background: transparent;
-    border: none;
-  }
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .5; } 
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .5; } 
+	100% { opacity: 1; }
 }

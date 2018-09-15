@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { AuthorizeService } from './authorize.service';
+import { AuthorizeService } from '../../services/authorize.service';
 
 describe('Service: Authorize', () => {
   beforeEach(() => {

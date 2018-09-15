@@ -1,22 +1,27 @@
-<mat-progress-bar [color]="'primary'" [mode]="progressBarMode">
-</mat-progress-bar>
-<nz-header>
-
-    <div class="content" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxFlexFill>
-        <div fxFlex="70" fxLayout="row" fxLayoutAlign="start center" class="sec1">
-            <i class="anticon sidebar-trigger anticon-menu-fold"></i>
-            <span class="mx-4 app-name" (click)="gotoHomePage()">{{appName}}</span>
-            <app-navigator></app-navigator>
-        </div>
-        <div fxFlex="30" class="text-right">
-            <button class="user-btn" [matMenuTriggerFor]="matmenu">
-                {{currentUser?.name}}
-            </button>
-            <mat-menu #matmenu="matMenu" [overlapTrigger]="false">
-                <button mat-menu-item *ngFor="let setting of appConfig.userSetting" (click)="handleUserSetting(setting)">
-                    {{setting.feature | translate}}
+<header>
+    <section class="progress-bar">
+        <mat-progress-bar [color]="'primary'" [mode]="progressBarMode">
+        </mat-progress-bar>
+    </section>
+    <nav>
+        <div class="content" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxFlexFill>
+            <div fxFlex="70" fxLayout="row" fxLayoutAlign="start center" class="sec1">
+                <mat-icon class="home-icon">menu</mat-icon>
+                <span class="mx-4 app-name" (click)="gotoHomePage()">{{appName}}</span>
+                <app-navigator></app-navigator>
+            </div>
+            <div fxFlex="30" class="text-right">
+                <mat-icon class="header-icon" matBadge="15" matBadgeColor="warn" matBadgeSize="small">chat</mat-icon>
+                <mat-icon class="header-icon" matBadge="15" matBadgeColor="warn" matBadgeSize="small" >notification_important</mat-icon>
+                <button class="user-btn" [matMenuTriggerFor]="matmenu">
+                    {{currentUser?.name}}
                 </button>
-            </mat-menu>
+                <mat-menu #matmenu="matMenu" [overlapTrigger]="false">
+                    <button mat-menu-item *ngFor="let setting of appConfig.userSetting" (click)="handleUserSetting(setting)">
+                        {{setting.name | translate}}
+                    </button>
+                </mat-menu>
+            </div>
         </div>
-    </div>
-</nz-header>
+    </nav>
+</header>

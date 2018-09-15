@@ -20,8 +20,4 @@ export class HomePage implements OnInit {
   ngOnInit() {
 
   }
-
-  handleHeaderAction(event) {
-    console.log(event);
-  }
 }

@@ -6,6 +6,7 @@ import { _ } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { Router } from '@angular/router';
 import {ProgressBarService} from '../../services/progress-bar.service';
 import { User } from '../../models/user.model';
+import { AuthorizeService } from '../../services/authorize.service';
 
 const LOG_OUT_FEATURE = 'logout';
 @Component({
@@ -30,7 +31,8 @@ export class HeaderComponent implements OnInit {
     @Inject(APP_CONFIG) appConfig: IAppConfig,
     private router: Router,
     private translate: TranslateService,
-    private progressBarService: ProgressBarService
+    private progressBarService: ProgressBarService,
+    private authService: AuthorizeService
     ) {
     this.appConfig = appConfig;
 
@@ -54,7 +56,10 @@ export class HeaderComponent implements OnInit {
 
   handleUserSetting(userSetting) {
     if (userSetting.feature === LOG_OUT_FEATURE) {
-      console.log('Logout');
+      this.authService.logout().subscribe(rs => {
+        console.log('Logout');
+        this.router.navigate(['login']);
+      });
     }
 
     if (userSetting.route !== '') {

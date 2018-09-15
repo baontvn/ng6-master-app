@@ -16,6 +16,8 @@ import {
     MatSidenavModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatBadgeModule
+
 } from '@angular/material';
 import { NgModule } from '@angular/core';
 
@@ -38,6 +40,7 @@ import { NgModule } from '@angular/core';
         MatSidenavModule,
         MatSelectModule,
         MatCheckboxModule,
+        MatBadgeModule
     ],
     exports: [
         MatButtonModule,
@@ -57,6 +60,7 @@ import { NgModule } from '@angular/core';
         MatSidenavModule,
         MatSelectModule,
         MatCheckboxModule,
+        MatBadgeModule
     ]
 })
 

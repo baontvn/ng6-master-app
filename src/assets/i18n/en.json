@@ -3,6 +3,7 @@
   "header": {
     "user-setting": {
       "profile": "Profile",
+      "setting": "Setting",
       "log-out": "Log Out"
     }
   },
@@ -17,6 +18,16 @@
       "sub-two": "Sub Two"
     }
   },
+  "login-page": {
+    "label": {
+      "user-name": "User Name",
+      "password": "Password"
+    },
+    "action": {
+      "login": "Login",
+      "forgot-password": "Forgot Password"
+    }
+  },
   "common": {
     "title": {
       "language": "Language",
@@ -24,8 +35,7 @@
     },
     "action": {
       "cancel": "Cancel",
-      "back": "Back",
-      "forgotPassword": "Forgot Password"
+      "back": "Back"
     }
   }
 }
