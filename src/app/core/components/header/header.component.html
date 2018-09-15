@@ -11,8 +11,8 @@
                 <app-navigator></app-navigator>
             </div>
             <div fxFlex="30" class="text-right">
-                <mat-icon class="header-icon" matBadge="15" matBadgeColor="warn" matBadgeSize="small">chat</mat-icon>
-                <mat-icon class="header-icon" matBadge="15" matBadgeColor="warn" matBadgeSize="small" >notification_important</mat-icon>
+                <mat-icon class="header-icon" [matBadge]="messages" matBadgeColor="warn" matBadgeSize="small">chat</mat-icon>
+                <mat-icon class="header-icon" [matBadge]="notifications" matBadgeColor="warn" matBadgeSize="small" >notification_important</mat-icon>
                 <button class="user-btn" [matMenuTriggerFor]="matmenu">
                     {{currentUser?.name}}
                 </button>

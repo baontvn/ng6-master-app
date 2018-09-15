@@ -2,7 +2,7 @@
 @import "base/mixins";
 :host(app-header) {
     padding-top: 0;
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
     display: grid;
     header {
         position: fixed;
@@ -25,7 +25,7 @@
             align-items: center;
             padding: calculateRem(8px) 0;
             color: $secondary--color;
-            height: 3rem;
+            height: 4rem;
             background: $header-background-color;
             .progress-bar {
                 display: flex;
@@ -52,10 +52,10 @@
         display: flex;
         align-content: center;
         align-items: center;
-        height: calculateRem(2px);
+        height: calculateRem(1px);
     }
     .user-btn {
-        height: 3rem;
+        height: 4rem;
         background: transparent;
         border: none;
         vertical-align: middle;

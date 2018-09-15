@@ -30,8 +30,8 @@ li {
 }
 li:hover ul.submenu {
     opacity: 1;
-    top: 3rem;
-    transition: 0.5s;
+    top: 4rem;
+    transition: 0.3s;
     visibility: visible;
 }
 .submenu li {
@@ -69,8 +69,8 @@ li:hover ul.submenu {
 .nav-main-item {
     width: 100px;
     margin-top: 2px;
-    height: calc(3rem - 2px);
-    line-height: calc(3rem - 2px);
+    height: calc(4rem - 2px);
+    line-height: calc(4rem - 2px);
     text-align: center;
     outline: none;
     border: none;

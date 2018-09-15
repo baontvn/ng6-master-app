@@ -15,6 +15,10 @@ export class ProgressInterceptor implements HttpInterceptor {
           if (event instanceof HttpResponse) {
             this.progressBarService.decrease();
           }
-        }));
+        }))
+        .catch(response => {
+          this.progressBarService.decrease();
+          return Observable.throw(response);
+        });
   }
 }

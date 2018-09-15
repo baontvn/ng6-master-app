@@ -25,6 +25,9 @@ export class HeaderComponent implements OnInit {
 
   progressBarMode: string;
 
+  messages = 10;
+  notifications = 10;
+
   @Output() action = new EventEmitter();
 
   constructor(

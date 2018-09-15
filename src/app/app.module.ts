@@ -14,7 +14,7 @@ import { environment } from '../environments/environment';
 import { ProgressBarService } from './core/services/progress-bar.service';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AuthorizeModule } from './core/guards/authorize/authorize.module';
-import { AuthGuard } from './core/guards/authorize/role-guards/auth.guard';
+import { BackendAPIInterceptor } from './shared/interceptors/backend-api.interceptor';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -44,6 +44,7 @@ export function createTranslateLoader(http: HttpClient) {
   providers: [
     { provide: APP_CONFIG, useValue: AppConfig },
     { provide: HTTP_INTERCEPTORS, useClass: ProgressInterceptor, multi: true, deps: [ProgressBarService] },
+    { provide: HTTP_INTERCEPTORS, useClass: BackendAPIInterceptor, multi: true},
     { provide: HTTP_INTERCEPTORS, useClass: TimingInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

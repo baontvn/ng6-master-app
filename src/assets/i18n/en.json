@@ -31,11 +31,23 @@
   "common": {
     "title": {
       "language": "Language",
-      "error404": "404 Error"
+      "error404": "404 Error",
+      "success": "Success",
+      "error": "Error",
+      "info": "Information",
+      "warning": "Warning"
     },
     "action": {
       "cancel": "Cancel",
       "back": "Back"
+    },
+    "message": {
+      "error": {
+        "unauthorized": "Unauthorized",
+        "access-denied": "Access Denied",
+        "not-found": "Not found",
+        "server-error": "Server Error"
+      }
     }
   }
 }

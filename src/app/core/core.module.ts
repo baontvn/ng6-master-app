@@ -11,6 +11,7 @@ import { Spinner } from './services/spinner.service';
 import { I18nService } from './services/i18n.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { MaterialModule } from '../shared/modules/material.module';
+import { NotificationService } from './services/notification.service';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { MaterialModule } from '../shared/modules/material.module';
     EventManager,
     Spinner,
     I18nService,
-    LocalStorageService
+    LocalStorageService,
+    NotificationService
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
